@@ -54,13 +54,18 @@ class FoglalasKezelo:
 
     def foglalas(self, szoba, datum):
         today = datetime.today()
-        today = today.replace(hour=0, minute=0, second=0, microsecond=0)  # nullázzuk az időkomponenseket
+        today = today.replace(hour=0, minute=0, second=0, microsecond=0)
+
         if datum < today:
             print("Érvénytelen dátum, csak jövőbeni foglalásokat fogadunk el.")
             return
 
         for foglalas in self.foglalasok:
-            if foglalas.szoba == szoba and foglalas.datum == datum:
+            foglalas_datum = foglalas.datum.replace(hour=0, minute=0, second=0, microsecond=0)
+
+            # A szobák összehasonlításánál azonosítóként használjuk a szobaszámot
+            if foglalas.szoba.szobaszam == szoba.szobaszam and foglalas_datum == datum.replace(hour=0, minute=0,
+                                                                                               second=0, microsecond=0):
                 print(f"A(z) {szoba.get_szalloda_nev()} szálloda szobája már foglalt ezen a napon.")
                 return
 

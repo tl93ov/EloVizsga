@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from datetime import datetime, timedelta
 
+
 class Szoba(ABC):
     def __init__(self, szobaszam, ar):
         self.szobaszam = szobaszam

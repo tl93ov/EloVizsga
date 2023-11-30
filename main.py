@@ -1,4 +1,5 @@
 from Classes import *
+
 def main():
     szalloda = Szalloda("Hotel Python")
     szalloda.add_szoba(EgyagyasSzoba(101))

@@ -75,7 +75,7 @@ class FoglalasKezelo:
 
         foglalas_ar = szoba_ar
 
-        print(f"Sikeres foglalás a(z) {szoba.get_szalloda_nev()} szállodában. A szoba ára naponta: {foglalas_ar} Ft.")
+        print(f"Sikeres foglalás a(z) {szoba.get_szalloda_nev()} szállodában. A szoba száma: {szoba.szobaszam} A szoba ára naponta: {foglalas_ar} Ft.")
 
     def lemondas(self, szoba, datum):
         datum = datum.replace(hour=0, minute=0, second=0, microsecond=0)

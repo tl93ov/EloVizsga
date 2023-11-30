@@ -25,7 +25,7 @@ def main():
 
         if valasztas == "1":
             szoba_tipus = input("Adja meg a szoba típusát (1 - Egyágyas, 2 - Kétágyas): ")
-            szoba_szam = int(input("Adja meg a szoba számát: "))
+            szoba_szam = int(input("Adja meg a szoba számát 1-99-ig: "))
             datum = input("Adja meg a foglalás dátumát (YYYY-MM-DD): ")
 
             if szoba_tipus == "1":

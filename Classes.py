@@ -75,7 +75,8 @@ class FoglalasKezelo:
     def lemondas(self, szoba, datum):
         datum = datum.replace(hour=0, minute=0, second=0, microsecond=0)
         for foglalas in self.foglalasok:
-            if foglalas.szoba == szoba and foglalas.datum == datum:
+            foglalas_datum = foglalas.datum.replace(hour=0, minute=0, second=0, microsecond=0)
+            if foglalas.szoba.szobaszam == szoba.szobaszam and foglalas_datum == datum:
                 self.foglalasok.remove(foglalas)
                 print("Sikeres lemondás.")
                 return
